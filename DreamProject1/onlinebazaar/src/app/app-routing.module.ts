@@ -20,6 +20,7 @@ import { UserGuard } from "./common/user.guard";
 import { AdminGuard } from "./common/admin.guard";
 import { SellerGuard } from "./common/seller.guard";
 
+import { TablecustomComponent } from './common/table-custom/table-custom.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -63,6 +64,7 @@ const routes: Routes = [
     products_inventory,
     LoginComponent,
     SignUpComponent,
+    TablecustomComponent
 
   ],
   imports: [RouterModule.forRoot(routes, { enableTracing: false }),

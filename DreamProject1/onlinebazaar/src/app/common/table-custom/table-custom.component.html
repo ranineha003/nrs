@@ -1,0 +1,12 @@
+<div>
+  <table border="2">
+    <tr>
+      <th *ngFor="let header of itemHeader">{{header}}</th>
+    </tr>
+    <tr *ngFor="let item of itemList">
+      <td>{{item.first}}</td>
+      <td>{{item.second}}</td>
+      <td><button (click)="btn(item)">Edit</button></td>
+    </tr>
+  </table>
+</div>

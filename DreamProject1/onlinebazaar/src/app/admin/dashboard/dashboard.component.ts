@@ -18,10 +18,10 @@ export class DashboardAdminComponent {
 
   constructor(route: ActivatedRoute) {
     console.log(route)
-    const id: Observable<string> = route.params.subscribe(p => {
+    route.params.subscribe(p => {
       console.log(p);
     });
-    const url: Observable<string> = route.url.subscribe((segments => segments.join('')));
+    route.url.subscribe((segments => segments.join('')));
     // route.data includes both `data` and `resolve`
     const user = route.data.subscribe(dt => {
       console.log(dt);

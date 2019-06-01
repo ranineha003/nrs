@@ -10,7 +10,15 @@ import { Communication } from "../common/services/communication.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  itemHeader=["title","id","name"];
+  itemList =[
+    {first:"manoj",second:27},
+    {first:"Rani",second:16}
 
+  ]
+  myitemclick(abc){
+    console.log(abc)
+  }
   constructor(public loginService: LoginSigupService, public router: Router, public sender: Communication, public fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: this.fb.control('', [Validators.required, Validators.email]),
