@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="loginInfo" (ngSubmit) = "login()">
+        Email : <input type="text" formControlName="email"><br><br>
+        <span *ngIf="email.invalid && (email.touched || email.dirty)">
+                <span *ngIf="email.errors.required">
+                        EMail is required
+                       
+                   </span>   
+                   <span *ngIf="email.errors.minlength">
+                        EMail is minlength
+                       
+                   </span>  
+                   <span *ngIf="email.errors.email">
+                        EMail not email
+                   </span>                      
+                   <span *ngIf="email.errors.notvalidmail">
+                        Not Valid Email
+                   </span>
+        </span><br/>
+        Password : <input type="password" formControlName="password"><br><br>
+        <button type="submit">Longing</button>
+    </form>
+</div>

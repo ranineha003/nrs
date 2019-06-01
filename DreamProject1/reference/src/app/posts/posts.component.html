@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="postInfo" (ngSubmit)="createPost()">
+        <input type="hidden" formControlName="_id"><br><br>
+        Title : <input type="text" formControlName="title"> <br><br>
+        Post : <input type="text" formControlName="post"><br><br>
+        Tags : <span formArrayName="tags">
+            <span *ngIf="all.controls.length>0">
+                <span *ngFor="let address of all.controls; let i=index">
+                    <input type="text" [formControlName]="i">
+                    <button type="button">Delete Tags</button> <br><br>
+                </span>
+            </span>
+        </span>
+        <button (click)="addTags()" type="button">Add more Tags</button><br><br>
+        <button type="submit">{{buttonname}}</button><br><br>
+        <button type="submit" *ngIf="!editmode" (click)="deletePost(postInfo)">Delete Post</button>
+    </form>
+    <app-postdata [posts]="posts" [editEnabled]="true" (editBtn)="updatePost($event)"></app-postdata>
+</div>

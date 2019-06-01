@@ -1,0 +1,61 @@
+Project Ecommerce
+
+Role : 
+1)user
+2)seller
+3) admin
+
+==============================project structire=================
+user
+----dashboard
+---- orders and its status, cancel
+---- address
+---- wishlist
+----- order tracking
+seller
+----- Products and inventory
+----- Order list
+----- dashboard
+admin
+------ approve seller
+------ products and invetory across all seller
+------- Dashboard
+login(captcha) slef impleneted
+signup (google implemted)
+---seller
+---user
+forgot
+home(showa all product)
+	--- Individual products and serach and offer
+	--- commments
+	--- Radting
+navbar
+------user
+------admin
+------seller
+------unregsiteerd
+footer
+----  user
+----- admin
+----- seller
+----- unregsitered
+common
+-----component
+-----services
+-------localstroargeservice
+-------subscribitionservice
+-------eventemitterservice
+------auth
+------pipes
+------directives
+-----------structural
+------------attribute
+
+images and painting
+
+https://valor-software.com/ngx-bootstrap/#/tabs
+https://getbootstrap.com/docs/4.2/getting-started/introduction/
+https://valor-software.com/ng2-charts/#pieChart
+bitbucket-- project mangent
+
+

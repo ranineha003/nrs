@@ -1,0 +1,65 @@
+<div *ngIf="true">
+    Neha you are great
+</div>
+
+<div *ngIf="title==='Singh'">
+    My full name is Neha Rani Singh
+</div>
+
+<div *ngIf="favFood[0]=='Chocolate'">Chocolate hai</div>
+<div *ngIf="favFood.indexOf('Chocolate') !=-1">Chocolate hai sahi</div>
+-----{{favFood[favFood.indexOf('Chocolate')]}}------
+<div *ngIf="favFood.indexOf('Toffee') !=-1">Chocolate hai sahi</div>
+
+
+<div [ngSwitch]="fruit">
+    <div *ngSwitchCase="'Litchi'">lichi</div>
+    <div *ngSwitchCase="'Apple'">apple</div>
+    <div *ngSwitchCase="'Mango'"> mango</div>
+    <div *ngSwitchDefault> Default</div>
+</div>
+
+<div [ngSwitch]="rank">
+    <div *ngSwitchCase="1">Topper</div>
+    <div *ngSwitchCase="2">Good</div>
+    <div *ngSwitchCase="3">Average</div>
+    <div *ngSwitchCase="4">Need improvement</div>
+    <div *ngSwitchDefault>Tu tiger hai!!! </div>
+</div>
+<hr />
+
+<form [formGroup]="loginForm" (ngSubmit)='submit()'>
+
+    <input type="text" name="username" formControlName="username" /><br />
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+
+        <div *ngIf="username.errors.required">
+            Username is required.
+        </div>
+        <div *ngIf="username.errors.maxlength">
+            Username can be of 15 characters max.
+        </div>
+    </div>
+    <input type="text" name="password" formControlName="password" /><br />
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+
+        <div *ngIf="password.errors.required">
+            Password is required.
+        </div>
+        <div *ngIf="password.errors.minlength">
+            Password must be at least 4 characters long.
+        </div>
+    </div>
+    <input type="submit" name="button" value="POKEME" />
+</form>
+<hr />
+
+<div style="background-color: red; width:300px;margin: 0 auto;">
+    <h2 style="font-size:25px; color:whitesmoke; text-align:center">My To-Do List</h2>
+
+    <form [formGroup]="todo" (ngSubmit)='submitTodo()' style="width:100%">
+
+        <input type="text" name="addition" formControlName="addition" style="width:100%" /><br />
+        <input type="submit" name="button" value="POKEME" />
+    </form>
+</div>

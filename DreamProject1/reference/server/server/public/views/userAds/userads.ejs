@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel='stylesheet' href='/static/css/style.css'/>
+    </head>
+    <body>
+	
+    
+        <form action="/userAds/create" method="post"  encType="multipart/form-data">
+            <div>
+                <input type="file" name="ads_img" />
+                <input type="text" name="title" placeholder="Enter Title" />
+                <input type="text" name="subtitle" placeholder="Enter Subtitle" />
+                <input type="text" name="rent_cost" placeholder="Enter Rent Cost" />
+                    <select name="rent_type">
+                        <option value="Day">Daily</option>
+                        <option value="Week">Weekly</option>
+                        <option value="Month">Monthly</option>
+                        <option value="Year">Yearly</option>
+                    </select>
+                <input type="text" name="negotiable" placeholder="Enter Negotiable" />
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </body>
+</html>

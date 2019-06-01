@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="registerInfo" (ngSubmit)="register()">
+        Email Address : <input type="text" formControlName= "email"><br><br>
+        
+        User Name : <input type="text" formControlName="username"><br><br>
+
+        Password : <input type="password" formControlName = "password"><br><br>
+
+        <button type="submit"> Sing Up</button><br><br>
+
+        <a [routerLink] = "['/login']">Already have an awesome account!!! Long Up\(-_-)/</a>
+    </form>
+</div>

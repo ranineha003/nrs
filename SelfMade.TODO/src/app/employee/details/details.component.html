@@ -1,0 +1,37 @@
+<h2>Employee Information</h2>
+
+<table border="1">
+    <tr *ngFor= "let list of listArray, index as i">
+        <td>
+            {{i+1}}
+        </td>
+        <td>
+            {{list.name}}
+        </td>
+        <td>
+            {{list.empID}}
+        </td>
+        <td>
+            {{list.contactInfo}}
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            template driven form
+            <form #myform="ngForm" (ngSubmit)="myTemplateSubmit(myform)">
+                   <br/> <input type="text" [(ngModel)] = "myInput" name="name" #name="ngModel" required="true" minlength="10"/>
+                   <br/> <span *ngIf="!name.valid">Name filed is required</span>
+
+                   <br/><input type="text" [(ngModel)] = "myInput2" name="empID" #empID="ngModel" required="true" minlength="10"/>
+
+                   <br/> <span *ngIf="!empID.valid">empID filed is required</span>
+
+                   <br/> <button type="submit">btn</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-primary">Button</button>

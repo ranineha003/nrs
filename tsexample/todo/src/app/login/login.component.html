@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>
+    Login Page
+  </h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username" >Username:</label>
+      <input formControlName="username" type="text" name="username" class="form-control" placeholder="Enter username"><br>
+      <small *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched" class="alert alert-danger">This field is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="password" >Password:</label>
+      <input formControlName="password" type="password" name="password" class="form-control" placeholder="Enter password"><br>
+      <small *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="alert alert-danger">Field is required and minimun length to be 8 digits</small>
+    </div>
+
+    <div class="checkbox">
+    <label><input type="checkbox" name="remember">Remember Me</label>
+      
+    </div>
+
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>

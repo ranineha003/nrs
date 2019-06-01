@@ -1,0 +1,19 @@
+<h1>Contacts Directory</h1>
+<table>
+  <tr *ngFor="let contact of contactList; index as i | async">
+    <td>
+      {{i+1}}
+    </td>
+    <td>
+      {{contact.name}}
+    </td>
+    <td>
+      {{contact.phone}}
+    </td>
+    <td>
+      <button (click)="delete(i)">Delete</button>
+    </td>
+    <td>
+      <button (click)="edit(i)">Edit</button>
+    </td>
+  </tr>

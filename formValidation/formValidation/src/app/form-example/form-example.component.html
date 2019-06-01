@@ -1,0 +1,40 @@
+<form [formGroup]="search" (ngSubmit)="onclick()">
+
+  <input type="text" placeholder="search here..." name="search1" formControlName="search1" /><br><br>
+  <div *ngIf="search1.invalid && (search1.touched || search1.dirty)">
+    <span *ngIf="search1.errors.required">
+      required value
+    </span>
+    <span *ngIf="search1.errors.pattern">
+        Only characters
+      </span>
+        </div>
+  <input style="margin-right: 10%; padding-inline-end: 0%" type="text" placeholder="search here also..." name="search2"
+    formControlName="search2" /><br>
+    <div *ngIf="search2.invalid && (search2.touched || search2.dirty)">
+        <span *ngIf="search2.errors.required">
+          required value
+        </span>
+        {{search2.errors | json}}
+        <span *ngIf="search2.errors.maxlength">
+            Exceeding length
+          </span>
+            </div>
+  <div formGroupName="address">
+    <input type="text" placeholder="search here..." name="line1" formControlName="line1" /><br><br>
+    <div *ngIf="line1.invalid && (line1.touched || line1.dirty)">
+        <span *ngIf="line1.errors.pattern">
+            Pattern not matching
+          </span>
+            </div>
+    <input type="text" placeholder="search here..." name="line2" formControlName="line2" /><br><br>
+  </div>
+  <button type="submit" style="align-items: center">Enter</button>
+  <button type="reset" style="align-items: center" (click)="resetMe()">reset</button>
+
+  <button type="button" (click)="onClickMe()">Click me!</button>
+  {{clickMessage}}
+
+</form>
+
+<input [(ngModel)]="clickMessage">

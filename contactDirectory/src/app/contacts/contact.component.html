@@ -1,0 +1,54 @@
+<h1>Contacts Directory</h1>
+<table>
+    <tr *ngFor="let contact of contactList; index as i">
+        <td>
+            {{i+1}}
+        </td>
+        <td>
+            {{contact.name}}
+        </td>
+        <td>
+            {{contact.phone}}
+        </td>
+        <td>
+            <button (click)="delete(i)">delete</button>
+        </td>
+    </tr>
+</table>
+<h1>Employee Directory</h1>
+<table>
+    <tr *ngFor= "let employee of employeeInfo; index as i">
+
+        <td>
+            {{i+1}}
+        </td>
+
+        <td>
+            {{employee.name}}
+        </td>
+        <td>
+            {{employee.phone}}
+        </td>
+        <td>
+            {{employee.ID}}
+        </td>
+
+
+
+    </tr>
+</table>
+<button (click)="handleClick()">Search</button>
+<button (click)="reset()">reset</button>
+
+<hr/>
+
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode=='map'"><a (click)="viewMode=='map'">Map View</a></li>
+    <li [class.active]="viewMode=='list'"><a (click)="viewMode=='list'">List View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map view content</div>
+    <div *ngSwitchCase="'list'">List view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>

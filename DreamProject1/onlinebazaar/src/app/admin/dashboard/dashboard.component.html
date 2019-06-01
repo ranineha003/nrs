@@ -1,0 +1,20 @@
+Admin Dashboard
+<i class="fas fa-camera"></i> <!-- using an <i> element to reference the icon -->
+<i class="fas {{user}}"></i>
+<button (click)="btnClick()">#hetoo</button>
+<app-admin-prodinventory-all #localprod2 [title]="'Rani naam to suna hoga'" (event1)="event1Prent($event)">
+</app-admin-prodinventory-all>
+<h1 #h1ref>This is my my text</h1>
+<h1 *ngIf="true">
+    this will
+</h1>
+<ng-template [ngIf]="true">
+    <h1>
+        this will
+    </h1>
+</ng-template>
+<li *ngFor="let item of items; index as i; trackBy: trackByFn">{{item}}</li>
+
+<ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByFn">
+    <li>{{item}}</li>
+  </ng-template>

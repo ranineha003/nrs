@@ -1,0 +1,28 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Online bazaar</h5>
+    <nav class="my-2 my-md-0 mr-md-3" *ngIf="isLoggedIn && isUser">
+        <a class="p-2 text-dark" routerLink="user">User</a>
+        <a class="p-2 text-dark" routerLink="/user/dashboard">User Dashboard</a>
+        <a class="p-2 text-dark" routerLink="/user/myProfile">My Profile</a>
+        <a class="p-2 text-dark" routerLink="/user/orders">My Orders</a>
+        <a class="p-2 text-dark" routerLink="/user/wishlist">Wishlist</a>
+    </nav>
+    <nav class="my-2 my-md-0 mr-md-3" *ngIf="isLoggedIn && isAdmin">
+        <a class="p-2 text-dark" routerLink="admin">Admin</a>
+        <a class="p-2 text-dark" routerLink="/admin/dashboard">Admin Dashboard </a>
+        <a class="p-2 text-dark" routerLink="/admin/approveSeller">Approve Sellers</a>
+        <a class="p-2 text-dark" routerLink="/admin/products_inventory_all">Products List all</a>
+
+    </nav>
+    <nav class="my-2 my-md-0 mr-md-3" *ngIf="isLoggedIn && isSeller">
+        <a class="p-2 text-dark" routerLink="seller">Seller</a>
+        <a class="p-2 text-dark" routerLink="/seller/dashboard">Seller Dashboard</a>
+        <a class="p-2 text-dark" routerLink="/seller/orderList">Order Lists</a>
+        <a class="p-2 text-dark" routerLink="/seller/product_Inventory">Products Inventory</a>
+
+    </nav>
+    <a class="btn btn-outline-primary" *ngIf="!isLoggedIn" routerLink="login">Login</a>
+    <a class="btn btn-outline-primary" *ngIf="!isLoggedIn" routerLink="sign-up">Sign up</a>
+    <a class="btn btn-outline-primary" *ngIf="isLoggedIn" (click)="logout()">logout</a>
+
+</div>

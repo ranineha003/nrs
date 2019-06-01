@@ -1,0 +1,115 @@
+<form-builder></form-builder>
+<div class="container-fluid">
+    <div class="row justify-content-center" style="margin-top:10px; padding: 30px">
+        <div class="col-4">
+            <div class="jumbotron">
+                <h3 style="text-align:center">Reactive Form Validation</h3>
+
+                <div>
+
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="usernameInput">User Name</label>
+                            <input formControlName="username" type="text" id="usernameInput" class="form-control"
+                                placeholder="Enter Username">
+                            <div *ngIf="form.controls.username.invalid && (form.controls.username.touched || form.controls.username.dirty)">
+                                <span *ngIf="form.controls.username.errors.required">
+                                    required value
+                                </span>
+                                <span *ngIf="form.controls.username.errors.pattern">
+                                    Only characters
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="passwordInput">Password</label>
+                            <input formControlName="password" type="text" id="passwordInput" class="form-control"
+                                placeholder="Enter Password">
+                            <div *ngIf="form.controls.password.invalid && (form.controls.password.touched || form.controls.password.dirty)">
+                                <span *ngIf="form.controls.password.errors.required">
+                                    required value
+                                </span>
+                                <span *ngIf="form.controls.password.errors.pattern">
+                                    Not matching required pattern
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="cnfInput">Confirm Password</label>
+                            <input formControlName="cnfpassword" type="text" id="cnfInput" class="form-control"
+                                placeholder="Confirm password">
+                            <div *ngIf="form.controls.cnfpassword.invalid && (form.controls.cnfpassword.touched || form.controls.cnfpassword.dirty)">
+                                <span *ngIf="form.controls.cnfpassword.errors.required">
+                                    required value
+                                </span>
+                                <span *ngIf="form.controls.cnfpassword.errors.pattern">
+                                    Match with password
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div formGroupName="address">
+                            <div class="form-group">
+                                <label for="stateInput">State</label>
+                                <input formControlName="state" type="text" id="stateInput" class="form-control"
+                                    placeholder="State ">
+                                    <div *ngIf="form.controls.address.controls.state.invalid && (form.controls.address.controls.state.touched || form.controls.address.controls.state.dirty)">
+                                            <span *ngIf="form.controls.address.controls.state.errors.required">
+                                                required value
+                                            </span>
+                                            <span *ngIf="form.controls.address.controls.state.errors.pattern">
+                                                Match with password
+                                            </span>
+                                        </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="zipInput">Zip</label>
+                                <input formControlName="zipcode" type="text" id="zipInput" class="form-control"
+                                    placeholder="Enter zipcode">
+                                    <div *ngIf="form.controls.address.controls.zipcode.invalid && (form.controls.address.controls.zipcode.touched || form.controls.address.controls.zipcode.dirty)">
+                                            <span *ngIf="form.controls.address.controls.zipcode.errors.required">
+                                                required value
+                                            </span>
+                                            <span *ngIf="form.controls.address.controls.zipcode.errors.pattern">
+                                                Match with password
+                                            </span>
+                                        </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="countryInput">Country</label>
+                                <input formControlName="country" type="text" id="countryInput" class="form-control"
+                                    placeholder="Enter the Country Name">
+                                    <div *ngIf="form.controls.address.controls.country.invalid && (form.controls.address.controls.country.touched || form.controls.address.controls.country.dirty)">
+                                            <span *ngIf="form.controls.address.controls.country.errors.required">
+                                                required value
+                                            </span>
+                                            <span *ngIf="form.controls.address.controls.state.errors.pattern">
+                                                Match with password
+                                            </span>
+                                        </div>
+                            </div>
+
+                        </div>
+                        <div formArrayName="aliases">
+                            <div *ngFor="let control of aliases.controls; let i=index">
+                                <input type="text" [formControlName]="i">
+
+                            </div>
+                        </div>
+                        <input type="button" (click)="delete(aliases.controls.length)" value="delete">
+
+                        <button type="button" (click)="addMore()">add more controls</button>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
