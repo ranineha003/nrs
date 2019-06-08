@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1>Login Page</h1>
 
-  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" novalidate>
 
     <div class="form-group">
       <label>Username</label>

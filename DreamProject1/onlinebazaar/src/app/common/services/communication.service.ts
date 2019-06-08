@@ -11,7 +11,7 @@ export class Communication {
     public $observablesenderEvent = this.senderEvent.asObservable();
 
     broadcast(data) {
-        this.sender.next(data)
+        this.sender.next(data) 
     }
     broadcastEventEmitter(data) {
         this.senderEvent.emit(data)

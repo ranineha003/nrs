@@ -1,3 +1,4 @@
+<app-progress #progress></app-progress>
 <form class="form-signin" (ngSubmit)="submitButton()" [formGroup]="loginForm">
   <h1 class="h3 mb-3 font-weight-normal">Login Here</h1>
 
@@ -20,4 +21,5 @@
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 </form>
+<h1 #myhi>thi is my h1</h1>
 <app-table-custom [itemHeader]="itemHeader" [itemList]="itemList" (myitemclick)="myitemclick($event)"></app-table-custom>

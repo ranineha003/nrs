@@ -19,7 +19,7 @@ import { AuthGuard } from "./common/auth.guard";
 import { UserGuard } from "./common/user.guard";
 import { AdminGuard } from "./common/admin.guard";
 import { SellerGuard } from "./common/seller.guard";
-
+import {ProgressComponent  } from "./common/component/progress.component";
 import { TablecustomComponent } from './common/table-custom/table-custom.component';
 
 const routes: Routes = [
@@ -64,8 +64,8 @@ const routes: Routes = [
     products_inventory,
     LoginComponent,
     SignUpComponent,
-    TablecustomComponent
-
+    TablecustomComponent,
+    ProgressComponent
   ],
   imports: [RouterModule.forRoot(routes, { enableTracing: false }),
     ReactiveFormsModule,

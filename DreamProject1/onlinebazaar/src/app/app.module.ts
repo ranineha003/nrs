@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {CommonModule  } from "@angular/common";
+import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
@@ -10,10 +10,9 @@ import { JWTInterceptors } from "./common/interceptors/jwt.interceptor";
 import { ErrorInterceptors } from "./common/interceptors/error.interceptors";
 import { NavBarComponent } from './common/nav-bar/nav-bar.component';
 import { Communication } from './common/services/communication.service';
-import { UserGuard} from "./common/user.guard";
-import { AdminGuard} from "./common/admin.guard";
-import { SellerGuard} from "./common/seller.guard";
-
+import { UserGuard } from "./common/user.guard";
+import { AdminGuard } from "./common/admin.guard";
+import { SellerGuard } from "./common/seller.guard";
 
 @NgModule({
   declarations: [

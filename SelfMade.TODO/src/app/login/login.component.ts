@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
+import { LoginSigupService } from "../common/services/login-signup";
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,16 @@ export class LoginComponent implements OnInit {
 
 userModel= new User('Neha', 'Neha@123', '');
 
+constructor(public loginService: LoginSigupService ){}
+
   ngOnInit() {}
   
-  onSubmit(){
-    console.log(this.userModel);
-  }
+  onSubmit(value){
+this.loginService.login(value).subscribe((data)=>{
+console.log(data);
+},
+(err)=>{
+console.log(err);
+}) }
+
 }

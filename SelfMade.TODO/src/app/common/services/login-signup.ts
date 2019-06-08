@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { CommonURL } from "./commonurl";
+import { COMMON_URL as URL} from "./commonurl";
 import { Observable } from 'rxjs';
 
 interface User{
@@ -9,19 +9,18 @@ interface User{
 }
 @Injectable()
 export class LoginSigupService {
-    public commonURL: CommonURL = new CommonURL();
 
     constructor(public http: HttpClient) {}
     
     login(postData:User) {
-        return this.http.post(this.commonURL.login, postData);
+        return this.http.post(URL.login, postData);
     }
 
     logout() {
-        return this.http.get<Observable<User>>(this.commonURL.logout);
+        return this.http.get<Observable<User>>(URL.logout);
     }
 
     register(postData) {
-        return this.http.post(this.commonURL.register, postData);
+        return this.http.post(URL.register, postData);
     }
 }
