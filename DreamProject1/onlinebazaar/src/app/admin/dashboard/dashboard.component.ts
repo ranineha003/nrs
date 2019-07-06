@@ -11,7 +11,7 @@ import { ProdInventoryAllComponent } from "../products_inventory_all/products_in
 export class DashboardAdminComponent {
   title = 'onlinebazaar';
   user: any;
-  items = ["manoj", "sameer", "gopal", "shaki", 3]
+  items = ["manoj", "sameer", "gopal", "Rani", 3]
   //@ViewChild(ProdInventoryAllComponent) localprod: ProdInventoryAllComponent;
   @ViewChild("localprod2") localprod2: ProdInventoryAllComponent;
   @ViewChild("h1ref") h1ref: ElementRef;

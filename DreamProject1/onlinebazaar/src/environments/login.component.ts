@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild , ElementRef} from '@angular/core';
-import { Validators, FormGroup, FormControl, FormBuilder } from "@angular/forms";
+import { Validators, FormGroup, FormControl, FormBuilder, EmailValidator } from "@angular/forms";
 import { LoginSigupService } from "../common/services/login-signup";
 import { Router } from "@angular/router";
 import { Communication } from "../common/services/communication.service";
@@ -8,7 +8,7 @@ import { environment } from "../../environments/environment";
 @Component({
   selector: 'app-login',  
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;

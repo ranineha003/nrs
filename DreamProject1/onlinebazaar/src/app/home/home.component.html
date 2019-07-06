@@ -1,1 +1,19 @@
-Home component
+<mat-toolbar color="indigo" class="navbar">
+    <div>Online Bazaar</div>
+    <div>
+<span>Item 1</span>
+<span>Item 2</span>
+<span>Item 3</span>
+    </div>
+</mat-toolbar>
+
+<div>
+    <p>Men's:{{list.men}}</p>
+    <p>Women's:{{list.women}}</p>
+    <div>
+        <p>Sales:</p>
+        <p *ngFor="let sale of list.sales">{{sale}}</p>
+        <p>Prices:</p>
+        <p *ngFor="let price of list.prices">{{price}}</p>
+    </div>
+</div>

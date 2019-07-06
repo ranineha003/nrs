@@ -13,7 +13,7 @@ import { Communication } from './common/services/communication.service';
 import { UserGuard } from "./common/user.guard";
 import { AdminGuard } from "./common/admin.guard";
 import { SellerGuard } from "./common/seller.guard";
-
+import { MaterialModule } from "./material/material.module";
 @NgModule({
   declarations: [
     MainComponent,
@@ -25,7 +25,8 @@ import { SellerGuard } from "./common/seller.guard";
     CommonModule,
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule, 
   ],
   providers: [
     LoginSigupService,

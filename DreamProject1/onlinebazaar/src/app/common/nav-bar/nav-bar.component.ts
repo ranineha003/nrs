@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
     if (sessionStorage.getItem('role') == 'admin') {
       this.isAdmin = true;
     }
-    if (sessionStorage.getItem('role') == 'admin') {
+    if (sessionStorage.getItem('role') == 'seller') {
       this.isSeller = true;
     }
     this.listener.$observableSender.subscribe((data) => {
